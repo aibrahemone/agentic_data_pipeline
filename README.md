@@ -2,7 +2,7 @@
 
 An on-premise AI agent that monitors, heals, and extends your data pipeline automatically using LangGraph, dbt, Airbyte, and a local LLM (Llama 3 via Ollama).
 
-> Built as part of a YouTube tutorial — [watch the video](https://www.youtube.com/watch?v=cUwdNaNKbdw) *(link coming soon)*
+> Built as part of a YouTube tutorial — [watch the video](https://www.youtube.com/watch?v=cUwdNaNKbdw)
 
 ---
 
