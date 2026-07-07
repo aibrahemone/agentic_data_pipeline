@@ -1,0 +1,30 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# dbt — generated, not source
+target/
+dbt_packages/
+logs/
+history/
+
+# Environment — never commit credentials
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Agent output — auto-generated at runtime
+pipeline_runs.json
+*.bak
+
+# Skills
+*.skill

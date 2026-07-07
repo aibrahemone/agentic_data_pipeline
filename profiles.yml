@@ -1,0 +1,7 @@
+ai_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "md:my_db?motherduck_token={{ env_var('MOTHERDUCK_TOKEN') }}"
+      threads: 4

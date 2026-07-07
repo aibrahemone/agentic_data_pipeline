@@ -1,0 +1,52 @@
+version: 2
+
+sources:
+  - name: airbyte_source
+    database: my_db
+    schema: source_sync
+    tables:
+      - name: orders
+        description: "Raw orders ingested from Postgres via Airbyte"
+        columns:
+          - name: id
+            description: "Unique order ID"
+            data_tests:
+              - not_null
+              - unique
+          - name: created_at
+            description: "Order timestamp"
+            data_tests:
+              - not_null
+          - name: order_value
+            description: "Order order_value"
+            data_tests:
+              - not_null
+
+models:
+  - name: stg_orders
+    description: "Staging model — cleaned orders from Airbyte raw"
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+          - unique
+      - name: created_at
+        data_tests:
+          - not_null
+      - name: order_value
+        data_tests:
+          - not_null
+
+  - name: orders_daily
+    description: "Daily order summary — mart model"
+    columns:
+      - name: order_date
+        data_tests:
+          - not_null
+          - unique
+      - name: total_orders
+        data_tests:
+          - not_null
+      - name: revenue
+        data_tests:
+          - not_null
